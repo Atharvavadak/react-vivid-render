@@ -3,16 +3,16 @@ import { Play } from "lucide-react";
 
 const WarmUp = () => {
   const exercises = [
-    { name: "SKIPPING ROPE", duration: "2 min" },
-    { name: "JUMPING JACKS", duration: "1 min" },
-    { name: "HIGH KNEES", duration: "1 min" },
-    { name: "JOGGING IN PLACE", duration: "2 min" },
-    { name: "JOGGING IN PLACE", duration: "2 min" },
-    { name: "ARM CIRCLES", duration: "30 sec" },
-    { name: "LEG SWINGS", duration: "30 sec" },
-    { name: "HIP CIRCLES", duration: "30 sec" },
-    { name: "SHOULDER ROLLS", duration: "30 sec" },
-    { name: "ARM CIRCLES", duration: "30 sec" }
+    { name: "SKIPPING ROPE", duration: "2 min", gif: "/assets/gifs/warmup_skipping_rope.gif" },
+    { name: "JUMPING JACKS", duration: "1 min", gif: "/assets/gifs/warmup_jumping_jacks.gif" },
+    { name: "HIGH KNEES", duration: "1 min", gif: "/assets/gifs/warmup_high_knees.gif" },
+    { name: "JOGGING IN PLACE", duration: "2 min", gif: "/assets/gifs/warmup_jogging_in_place.gif" },
+    { name: "JOGGING IN PLACE", duration: "2 min", gif: "/assets/gifs/warmup_jogging_in_place.gif" },
+    { name: "ARM CIRCLES", duration: "30 sec", gif: "/assets/gifs/warmup_arm_circles.gif" },
+    { name: "LEG SWINGS", duration: "30 sec", gif: "/assets/gifs/warmup_leg_swings.gif" },
+    { name: "HIP CIRCLES", duration: "30 sec", gif: "/assets/gifs/warmup_hip_circles.gif" },
+    { name: "SHOULDER ROLLS", duration: "30 sec", gif: "/assets/gifs/warmup_shoulder_rolls.gif" },
+    { name: "ARM CIRCLES", duration: "30 sec", gif: "/assets/gifs/warmup_arm_circles.gif" }
   ];
 
   return (
@@ -24,10 +24,21 @@ const WarmUp = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-5 gap-6 max-w-6xl mx-auto">
           {exercises.map((exercise, index) => (
-            <div key={index} className="workout-card aspect-square flex flex-col items-center justify-between group">
+            <div 
+              key={index} 
+              className="workout-card aspect-square flex flex-col items-center justify-between group hover:scale-105 hover:border-primary hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all duration-300"
+            >
+              <div className="w-full h-32 overflow-hidden rounded-t-2xl bg-muted/20">
+                <img 
+                  src={exercise.gif} 
+                  alt={exercise.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div className="flex-1 flex items-center justify-center">
-                <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Play className="w-8 h-8 text-primary" />
+                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Play className="w-6 h-6 text-primary" />
                 </div>
               </div>
               
