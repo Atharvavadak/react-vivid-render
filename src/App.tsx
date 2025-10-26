@@ -11,6 +11,7 @@ import GetStarted from "./pages/GetStarted";
 import WarmUp from "./pages/WarmUp";
 import Cardio from "./pages/Cardio";
 import Strength from "./pages/Strength";
+import PostureTracker from "./pages/PostureTracker";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/warm-up" element={<WarmUp />} />
           <Route path="/cardio" element={<Cardio />} />
           <Route path="/strength" element={<Strength />} />
+          <Route path="/posture-tracker" element={<PostureTracker />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
